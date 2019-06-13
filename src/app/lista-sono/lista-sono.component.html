@@ -1,0 +1,26 @@
+<p>Lista de pessoas com sono master, bora acordar!</p>
+
+<ul *ngFor="let person of people">
+    <!--chama todos os nomes da lista e inclui a frase. O que esta entre as chaves são as variáveis
+    <li> {{person.name}} de {{person.age}} anos precisa dormir. Nivel de sono {{person.level}}.</li>-->
+     
+    <!-- <li *ngIf=" person.age == 24">
+            Pessoas com {{person.age}} anos morrem de sono
+        </li>-->
+</ul>
+<ul *ngFor="let person of people">
+    <div [ngSwitch] = "person.level">
+        <li *ngSwitchCase = '"P"'>
+            {{person.name}} esta com pouco sono
+        </li>
+            <li *ngSwitchCase = '"M"'>
+                {{person.name}} esta com sono moderado
+            </li>
+        <li *ngSwitchCase = '"G"'>
+            {{person.name}} esta com muito sono
+        </li>
+        
+    </div>
+</ul>
+    
+        
